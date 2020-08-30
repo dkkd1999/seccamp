@@ -126,5 +126,13 @@ int main(void){
     printlist_reverse(head,end);
     printf("\n%d\n",list_size(head,end));
     
+    struct node *p;
+    p = head;
+    while(p != NULL){
+      struct node *q;
+      q = p->next;
+      free(p);
+      p = q;
+    }
     return 0;
 }
